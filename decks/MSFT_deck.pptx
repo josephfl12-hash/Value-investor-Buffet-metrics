@@ -1,0 +1,8 @@
+MSFT Strike Price Matrix
+Case | Intrinsic | MOS25 | MOS15 | MOS10
+---|---:|---:|---:|---:
+Conservative | $387.68 | $290.76 | $329.53 | $348.91
+Base | $456.10 | $342.07 | $387.68 | $410.49
+Optimistic | $524.51 | $393.38 | $445.83 | $472.06
+
+Current price: $410.00 | Status: WATCH

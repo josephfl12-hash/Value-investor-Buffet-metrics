@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Watchlist Dashboard</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 1.5rem; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ddd; padding: 8px; font-size: 14px; }
+    th { background: #f6f7fb; text-align: left; }
+    .status-pill {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+    .FAT\ PITCH { background: #d1fae5; color: #065f46; }
+    .BUY\ ZONE { background: #dbeafe; color: #1d4ed8; }
+    .WATCH { background: #fef3c7; color: #92400e; }
+    .FAIR { background: #e5e7eb; color: #374151; }
+    .EXPENSIVE { background: #fee2e2; color: #b91c1c; }
+  </style>
+</head>
+<body>
+  <h1>Watchlist Dashboard</h1>
+  <p><a href="/refresh">Refresh watchlist</a></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Ticker</th>
+        <th>Price</th>
+        <th>Intrinsic (Base)</th>
+        <th>MOS25</th>
+        <th>MOS15</th>
+        <th>MOS10</th>
+        <th>% to MOS25</th>
+        <th>Status</th>
+        <th>Open Report</th>
+        <th>Regen Report</th>
+        <th>Regen Deck</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in rows %}
+      <tr>
+        <td>{{ row.ticker }}</td>
+        <td>${{ "%.2f"|format(row.price) }}</td>
+        <td>${{ "%.2f"|format(row.intrinsic_base) }}</td>
+        <td>${{ "%.2f"|format(row.strike_mos_25) }}</td>
+        <td>${{ "%.2f"|format(row.strike_mos_15) }}</td>
+        <td>${{ "%.2f"|format(row.strike_mos_10) }}</td>
+        <td>{{ "%.2f%%"|format(row.pct_to_mos25 * 100) }}</td>
+        <td><span class="status-pill {{ row.status }}">{{ row.status }}</span></td>
+        <td><a href="/reports/{{ row.ticker }}_report.html" target="_blank">Open</a></td>
+        <td><a href="/refresh">Regenerate</a></td>
+        <td><a href="/decks/{{ row.ticker }}_deck.pptx" target="_blank">Regenerate</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</body>
+</html>
