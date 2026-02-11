@@ -1,0 +1,8 @@
+AMZN Strike Price Matrix
+Case | Intrinsic | MOS25 | MOS15 | MOS10
+---|---:|---:|---:|---:
+Conservative | $151.22 | $113.42 | $128.54 | $136.10
+Base | $177.91 | $133.43 | $151.22 | $160.12
+Optimistic | $204.59 | $153.45 | $173.91 | $184.14
+
+Current price: $188.00 | Status: EXPENSIVE

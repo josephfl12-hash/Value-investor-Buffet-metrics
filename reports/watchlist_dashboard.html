@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8' />
+  <title>Watchlist Dashboard</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 1.5rem; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ddd; padding: 8px; font-size: 14px; }
+    th { background: #f6f7fb; text-align: left; }
+    .status-pill { display: inline-block; padding: 2px 10px; border-radius: 999px; font-size: 12px; font-weight: 700; }
+    .FAT\ PITCH { background: #d1fae5; color: #065f46; }
+    .BUY\ ZONE { background: #dbeafe; color: #1d4ed8; }
+    .WATCH { background: #fef3c7; color: #92400e; }
+    .FAIR { background: #e5e7eb; color: #374151; }
+    .EXPENSIVE { background: #fee2e2; color: #b91c1c; }
+  </style>
+</head>
+<body>
+  <h1>Watchlist Dashboard</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Ticker</th><th>Price</th><th>Intrinsic (Base)</th><th>MOS25</th><th>MOS15</th><th>MOS10</th>
+        <th>% to MOS25</th><th>Status</th><th>Open Report</th><th>Regen Report</th><th>Regen Deck</th>
+      </tr>
+    </thead>
+    <tbody><tr><td>AMZN</td><td>$188.00</td><td>$177.91</td><td>$133.43</td><td>$151.22</td><td>$160.12</td><td>40.90%</td><td><span class='status-pill EXPENSIVE'>EXPENSIVE</span></td><td><a href='AMZN_report.html'>Open</a></td><td><a href='AMZN_report.html'>Regenerate</a></td><td><a href='../decks/AMZN_deck.pptx'>Regenerate</a></td></tr>
+<tr><td>MSFT</td><td>$410.00</td><td>$456.10</td><td>$342.07</td><td>$387.68</td><td>$410.49</td><td>19.86%</td><td><span class='status-pill WATCH'>WATCH</span></td><td><a href='MSFT_report.html'>Open</a></td><td><a href='MSFT_report.html'>Regenerate</a></td><td><a href='../decks/MSFT_deck.pptx'>Regenerate</a></td></tr></tbody>
+  </table>
+</body>
+</html>
